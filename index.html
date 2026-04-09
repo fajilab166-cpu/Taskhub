@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHub Earn</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { background-color: #f0f2f5; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
+        .card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .btn { background: #0088cc; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        .ad-box { background: #eee; border: 1px dashed #999; padding: 10px; margin: 10px 0; min-height: 50px; }
+    </style>
+</head>
+<body>
+    <h2>TaskHub Earnings</h2>
+    <div class="card">
+        <h3>Your Balance: <span id="balance">0.00</span> BDT</h3>
+    </div>
+    <div class="ad-box">
+        <p style="font-size: 12px; color: #666;">Advertisement will be displayed here</p>
+    </div>
+    <div class="card">
+        <h4>Daily Tasks</h4>
+        <p>Earn by watching videos</p>
+        <button class="btn" onclick="showAd()">Start Task</button>
+    </div>
+    <script>
+        let balance = 0;
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        function showAd() {
+            alert("Loading advertisement...");
+            balance += 0.50;
+            document.getElementById('balance').innerText = balance.toFixed(2);
+        }
+    </script>
+</body>
+</html>
